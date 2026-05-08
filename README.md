@@ -23,15 +23,23 @@ python -m session_bridge.cli --help
 
 ### Transfer latest session
 
-```bash
-# Claude → Codex
-python -m session_bridge.cli transfer --from claude --to codex
+Run this command from the **authsec-bridge directory**. Use `--cwd` to point to the project where your session was started:
 
+```bash
 # Claude → Gemini
-python -m session_bridge.cli transfer --from claude --to gemini
+python -m session_bridge.cli transfer --from claude --to gemini --cwd "C:/Users/YourName/path/to/your-project"
+
+# Claude → Codex
+python -m session_bridge.cli transfer --from claude --to codex --cwd "C:/Users/YourName/path/to/your-project"
 
 # Codex → Claude
-python -m session_bridge.cli transfer --from codex --to claude
+python -m session_bridge.cli transfer --from codex --to claude --cwd "C:/Users/YourName/path/to/your-project"
+```
+
+Example:
+
+```bash
+python -m session_bridge.cli transfer --from claude --to gemini --cwd "C:/Users/rk/authsec-sales-agent"
 ```
 
 Output prints the new session ID and the exact resume command to run.
